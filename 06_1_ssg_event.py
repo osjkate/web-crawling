@@ -23,3 +23,14 @@ for i, unit in enumerate(units, 1):
         print(f"{i} : {link}")
     else:
         print(f"https://event.ssg.com{link}")
+
+    eo_in = unit.select_one(".eo_in")
+
+    text_list = eo_in.find_all(string=True) # String을 가진 모든 태그를 가져오기
+    # print(text_list)
+    # print()
+
+    for text in text_list:
+        if text != '\n':
+            print(text)
+    print()
